@@ -172,11 +172,14 @@ const AddProduct = () => {
                 <FormField
                   control={form.control}
                   name="category"
-                  render={({ field: _field }) => (
+                  render={({ field }) => (
                     <FormItem>
                       <FormLabel>Category</FormLabel>
                       <FormControl>
-                        <Select>
+                        <Select
+                          onValueChange={field.onChange}
+                          defaultValue={field.value}
+                        >
                           <SelectTrigger>
                             <SelectValue placeholder="Select a category" />
                           </SelectTrigger>
