@@ -3,19 +3,19 @@ import { MetadataRoute } from 'next'
 export default function sitemap(): MetadataRoute.Sitemap {
   return [
     {
-      url: 'https://your-admin-domain.com',
+      url: process.env.NEXT_PUBLIC_APP_URL || 'http://localhost:3000',
       lastModified: new Date(),
       changeFrequency: 'yearly',
       priority: 1,
     },
     {
-      url: 'https://your-admin-domain.com/products',
+      url: `${process.env.NEXT_PUBLIC_APP_URL || 'http://localhost:3000'}/products`,
       lastModified: new Date(),
       changeFrequency: 'monthly',
       priority: 0.8,
     },
     {
-      url: 'https://your-admin-domain.com/users',
+      url: `${process.env.NEXT_PUBLIC_APP_URL || 'http://localhost:3000'}/users`,
       lastModified: new Date(),
       changeFrequency: 'monthly',
       priority: 0.5,
